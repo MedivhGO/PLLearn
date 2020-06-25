@@ -1,0 +1,61 @@
+\documentclass[10pt]{article}
+\usepackage{ctex}
+
+\newcommand{\myfont}{\textit{\textbf{\textsf{Fancy Text}}}}c %自己定义的字体
+\begin{document}
+	%字体设置（罗马字体，无衬线字体，打字机字体）
+	%字体族设置
+	\textrm{Roman Family}  \textsf{Sans Serif Family}  \texttt{Typewriter Family}
+	
+	 %可以使用大括号来限定字体的作用范围
+	 
+	 
+	\rmfamily Roman Family  {\sffamily Sans Serif Family}   {\ttfamily Typewriter Family}
+	
+	{\sffamily who are you? you find self on everyone around. take you as the same as others!}
+	%字体声明命令
+	
+	{\ttfamily Are you wiser than others? definitely no. in some ways,
+	may it is true. What can you achieve? a luxurious house? a brillilant car？ an admirable career? 
+	who konws?}
+	
+	%字体系列设置{粗细，宽度}
+	\textmd{Medium Series}  \textbf{Boldface Series}
+	
+	{\mdseries Medium Series}    {\bfseries Boldface Series}
+	
+	%字体形状设置{直立，斜体，伪斜体，小型大写}
+	\textup{Upright Shape} \textit{Italic Shape}
+	\textsl{Slanted Shape}  \textsc{Small Caps Shape}
+	
+	{\upshape Upright Shape}  {\itshape Italic Shape} 
+        {\slshape Slanted Shape} {\scshape Small Caps Shape}
+        
+        %中文字体设置
+        {\songti 宋体}  \quad {\heiti 黑体}    \quad {\fangsong 仿宋}
+        \quad {\kaishu 楷书}
+        
+       中文字体的\textbf{粗体}黑体表示 与\textit{斜体}楷书表示
+       
+       %字体大小 是相对于标准字体来设置的，标准字体的设置在documentclass 中进行了设置一般只有[10,11,12pt]
+       {\tiny Hello}\\
+       {\scriptsize Hello}\\
+       {\footnotesize Hello}\\
+       {\small Hello}\\
+       {\normalsize Hello}\\
+       {\large Hello}\\
+       {\Large Hello}\\
+       {\LARGE Hello}\\
+       {\huge Hello}\\
+       {\Huge Hello}\\
+       
+       %中文字号设置命令
+       \zihao{5} 你好！ %  -0 一般是小初号
+       
+       
+       \myfont
+      
+        
+	
+
+\end{document}

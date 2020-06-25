@@ -1,0 +1,83 @@
+\documentclass{article}
+\usepackage{ctex}
+%\title{用户自定义打桩}
+%\author{李敬奇}
+%\date{\today}
+\begin{document}
+	%\maketitle
+	\begin{Huge} \centerline{ \textbf{用户自定义打桩} } \end{Huge}
+	
+	\begin{large}
+		\centerline{\today}
+	\end{large}
+	%\tableofcontents
+	%\newpage
+	\section{概述}
+		\subsection{版本标识}
+			本设计是第一版
+			%\begin{itemize}
+			%	\item hello
+			%	\item world
+			%\end{itemize}
+			
+		%	\begin{enumerate}
+			%	\item abc
+			%	\item bcd
+			%\end{enumerate}
+		\subsection{系统目标}
+			对打桩模块进行功能上的扩展，使得用户能够自定义桩函数功能，提高覆盖率。
+	\section{总体设计}
+		\subsection{需求规定}
+			
+
+			
+		\subsection{输入输出设计}
+			\subsubsection{输入输出流图}
+			
+			\subsubsection{输入输出说明}
+			
+		\subsection{总体架构}
+			\subsubsection{系统结构}
+			位于unittest.util包下，用于配置打桩的方式 \\
+			\begin{itemize}
+			 \item stubGenerateMode=0表示随机打桩；
+			 \item stubGenerateMode=1表示基于函数摘要打桩；
+			\item stubGenerateMode=2表示基于函数摘要和路径打桩;
+			\item stubGenerateMode=3表示用户自定义打桩函数；
+			\end{itemize}
+			
+				
+			\subsubsection{主要类}
+				
+			
+				\begin{itemize}
+				 	\item Config.java
+					\item StubGenerate.java
+					\item     
+					unittest.teststub.generate.symboltableExpand 符号表扩展模块
+					
+					\item SCOPEFIRSTVISITOR.java
+					
+					\item unittest.teststub.generate.mustStubedFinding 需要打桩变量和函数查找模块
+				
+				\end{itemize}
+	
+			\subsubsection{子模块说明}		
+		\subsection{处理流程}
+			
+	\section{接口设计}
+		\subsection{外部接口}
+			
+			\subsubsection{函数摘要接口}
+				
+			\subsubsection{可行路径选择模块接口}
+			
+			\subsubsection{打桩与动态运行模块接口}
+			
+			\subsubsection{打桩与插装模块接口}
+			
+		\subsection{内部接口}
+				
+	
+			
+\end{document}

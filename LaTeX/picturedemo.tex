@@ -1,0 +1,49 @@
+\documentclass{article}
+
+\usepackage{ctex}
+%实现灵活的分页
+%给图表添加标题
+%交叉引用
+
+% figure环境（table环境类似）
+% \beign{figure}[<允许位置>]
+%  <任意内容>
+% \end{figure}
+%
+% 允许位置参数 默认 （tbp）
+%	h 此处（here） 代码所在的上下文位置
+%   t 页顶（top） 代码所在页面或之后页面的顶部
+%	b 页底（bottom） 代码所在页面或之后页面的底部
+%	p 独立一页（page） 浮动页面
+%
+
+\usepackage{graphicx} %支持EPS，PDF，PNG，JPEG，BMP格式的图片
+%\graphicspath{{figures/}}
+\begin{document}
+	 %	\includegraphics{凛}
+	 	三叶是谁\ref{sanyeye} \\
+	 	\begin{figure}[htbp]  %浮动体
+			
+	 		\centering 
+	 		\includegraphics[scale=0.3 ]{sanye} \label{sanyeye}
+	 		\caption{三叶}
+			\includegraphics[scale=0.3]{sanye2} 
+			\caption{三叶2}
+	
+		\end{figure}
+		
+		请查看表格\ref{tab-score} \\		
+		\begin{table}
+			\centering
+			\begin{tabular}{|l|c|c|c|r|}
+			\hline
+			姓名 & 语文 & 数学 & 外语 & 备注 \\
+			\hline
+			张三 & 110 & 120 & 130 & 补考另行通知 \\
+			\hline
+			
+			\end{tabular}
+			\caption{成绩} \label{tab-score}
+		\end{table}
+	
+\end{document}

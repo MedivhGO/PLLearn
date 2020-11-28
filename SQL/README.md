@@ -1,4 +1,4 @@
-使用sqlite3学习SQL的使用
+#使用sqlite3学习SQL的使用
 
 sqlite3的使用方法:
 
@@ -13,3 +13,7 @@ sqllite3 *.db 读取数据库.
 .help 查看帮助.
 
 .quit 退出到shell.
+
+
+# TPCDS测试SQL
+

@@ -1,4 +1,4 @@
-#使用sqlite3学习SQL的使用
+# 使用sqlite3学习SQL的使用
 
 sqlite3的使用方法:
 

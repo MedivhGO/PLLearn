@@ -12,9 +12,9 @@ template <typename T>
 class foo<T, typename std::enable_if<std::is_integral<T>::value>::type>
 {
 public:
-	foo() {
-		std::cout << "Integer";
-	}
+    foo() {
+        std::cout << "Integer";
+    }
 }; // 
 
 
@@ -22,14 +22,14 @@ template <typename T>
 class foo<T, typename std::enable_if<std::is_floating_point<T>::value>::type>
 {
 public:
-	foo() {
-		std::cout << "Float";
-	}
+    foo() {
+        std::cout << "Float";
+    }
 }; // 特化模板2
 
 //int main()
 //{
-//	foo<int> fi;
-//	std::cout << std::endl;
-//	foo<float> ff;
+//    foo<int> fi;
+//    std::cout << std::endl;
+//    foo<float> ff;
 //}

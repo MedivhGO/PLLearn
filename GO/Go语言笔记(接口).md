@@ -23,8 +23,8 @@ type iface struct {
 ```Go
 
 type tester interface {
-	test()
-	string() string
+    test()
+    string() string
 }
 
 type data struct{}
@@ -35,16 +35,16 @@ func (data) string() string { return "" }
 
 func main() {
 
-	var d data
-	//不存在基础类型到指着类型的转换
-	//var t tester = d // data只实现了string方法没有实现 test方法
+    var d data
+    //不存在基础类型到指着类型的转换
+    //var t tester = d // data只实现了string方法没有实现 test方法
 
-	//会把指针类型转换到基础类型
-	var t tester = &d //实现了test方法
+    //会把指针类型转换到基础类型
+    var t tester = &d //实现了test方法
 
-	t.test()
+    t.test()
 
-	println(t.string())
+    println(t.string())
 
 }
 
@@ -61,17 +61,17 @@ func main() {
 
 func main() {
 
-	var t1, t2 interface{}
+    var t1, t2 interface{}
 
-	println(t1 == nil, t1 == t2)
+    println(t1 == nil, t1 == t2)
 
-	t1, t2 = 100, 100
+    t1, t2 = 100, 100
 
-	println(t1 == t2)
+    println(t1 == t2)
 
-	t1, t2 = map[string]int{}, map[string]int{}
+    t1, t2 = map[string]int{}, map[string]int{}
 
-	println(t1 == t2)
+    println(t1 == t2)
 
 }
 
@@ -92,26 +92,26 @@ func main() {
 type data struct{}
 
 func (data) string() string {
-	return "" //定义data类型的方法
+    return "" //定义data类型的方法
 }
 
 type node struct {
-	data interface { //匿名接口
-		string() string
-	}
+    data interface { //匿名接口
+        string() string
+    }
 }
 
 func main() {
 
-	var t interface { //定义接口变量
-		string() string
-	} = data{}
+    var t interface { //定义接口变量
+        string() string
+    } = data{}
 
-	n := node{ //初始化接口变量
-		data: t,
-	}
+    n := node{ //初始化接口变量
+        data: t,
+    }
 
-	println(n.data.string())
+    println(n.data.string())
 }
 
 
@@ -129,20 +129,20 @@ func main() {
 ```Go
 
 type iface struct {
-	tab  *itab  //类型信息
-	data unsafe.Pointer //实际对象指针
+    tab  *itab  //类型信息
+    data unsafe.Pointer //实际对象指针
 }
 
 type itab struct {
-	inter *interfacetype //接口类型
-	_type *_type //实际对象地址
-	fun   [1]uintptr //实际对象方法
+    inter *interfacetype //接口类型
+    _type *_type //实际对象地址
+    fun   [1]uintptr //实际对象方法
 }
 
 type Ner interface {
-	a()
-	b(int)
-	c(string) string
+    a()
+    b(int)
+    c(string) string
 }
 
 type N int
@@ -153,10 +153,10 @@ func (*N) c(string) string { return "" }
 
 func main() {
 
-	var n N
-	var t Ner = &n
+    var n N
+    var t Ner = &n
 
-	t.a()
+    t.a()
 }
 
 
@@ -174,24 +174,24 @@ import "fmt"
 type data int
 
 func (d data) String() string {
-	return fmt.Sprintf("data: %d", d)
+    return fmt.Sprintf("data: %d", d)
 }
 
 func main() {
-	var d data = 15
+    var d data = 15
 
-	var x interface{} = d
+    var x interface{} = d
 
-	if n, ok := x.(fmt.Stringer); ok {
-		fmt.Println(n) //15
-	}
+    if n, ok := x.(fmt.Stringer); ok {
+        fmt.Println(n) //15
+    }
 
-	if d2, ok := x.(data); ok {
-		fmt.Println(d2) //15
-	}
+    if d2, ok := x.(data); ok {
+        fmt.Println(d2) //15
+    }
 
-	e := x.(error)
-	fmt.Println(e)
+    e := x.(error)
+    fmt.Println(e)
 
 }
 

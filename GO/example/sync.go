@@ -1,5 +1,10 @@
 package main
 
+import (
+	"sync"
+	"time"
+)
+
 type data struct {
 	sync.Mutex
 }
@@ -9,11 +14,10 @@ func (d data) test(s string) {
 
 	defer d.Unlock()
 
-	for i:=0;i<5;i++ {
-		println(s,i)
+	for i := 0; i < 5; i++ {
+		println(s, i)
 		time.Sleep(time.seconds)
 	}
-
 
 }
 func main() {

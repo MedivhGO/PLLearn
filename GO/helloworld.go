@@ -46,6 +46,6 @@ func main() {
 	var qr [3]int = [3]int{1, 2, 3}
 	var rr [3]int = [3]int{1, 2}
 	fmt.Printf("%d, %d \n", qr[2], rr[2])
-	one_hundred := [...]int{99: -1}
-	fmt.Println(one_hundred[99])
+	oneHundred := [...]int{99: -1}
+	fmt.Println(oneHundred[99])
 }

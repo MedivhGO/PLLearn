@@ -20,6 +20,14 @@ func main() {
 	// 4b68ab3847feda7d6c62c1fbcbeebfa35eab7351ed5e78f4ddadea5df64b8015
 	// false
 	// [32]uint8
+	var s []int
+	fmt.Println(s == nil)
+	s = nil
+	fmt.Println(s == nil)
+	s = []int(nil)
+	fmt.Println(s == nil)
+	s = []int{}
+	fmt.Println(s == nil)
 }
 
 //!-

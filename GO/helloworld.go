@@ -48,4 +48,11 @@ func main() {
 	fmt.Printf("%d, %d \n", qr[2], rr[2])
 	oneHundred := [...]int{99: -1}
 	fmt.Println(oneHundred[99])
+
+	ex_map := make(map[bool]string)
+	ex_map[true] = "abc"
+	ex_map[false] = "bec"
+	fmt.Println(ex_map[true])
+	fmt.Println(ex_map[false])
+
 }

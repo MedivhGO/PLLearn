@@ -16,7 +16,7 @@ func appendslice(x []int, y ...int) []int {
 		z = x[:zlen]
 	} else {
 		// There is insufficient space.
-		// Grow by doubling, for amortized linear complexity.
+		// Grow by doubling, for amortized(摊还分析) linear complexity.
 		zcap := zlen
 		if zcap < 2*len(x) {
 			zcap = 2 * len(x)

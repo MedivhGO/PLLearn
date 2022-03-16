@@ -55,4 +55,9 @@ func main() {
 	fmt.Println(ex_map[true])
 	fmt.Println(ex_map[false])
 
+	val, ok := ex_map[true]
+	if !ok {
+		fmt.Println("error")
+	}
+	fmt.Println(val)
 }

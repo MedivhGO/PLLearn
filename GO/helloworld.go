@@ -49,13 +49,13 @@ func main() {
 	oneHundred := [...]int{99: -1}
 	fmt.Println(oneHundred[99])
 
-	ex_map := make(map[bool]string)
-	ex_map[true] = "abc"
-	ex_map[false] = "bec"
-	fmt.Println(ex_map[true])
-	fmt.Println(ex_map[false])
+	exMap := make(map[bool]string)
+	exMap[true] = "abc"
+	exMap[false] = "bec"
+	fmt.Println(exMap[true])
+	fmt.Println(exMap[false])
 
-	val, ok := ex_map[true]
+	val, ok := exMap[true]
 	if !ok {
 		fmt.Println("error")
 	}

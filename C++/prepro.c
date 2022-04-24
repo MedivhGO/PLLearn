@@ -74,7 +74,6 @@ int preprodef() {
 
 int main()
 {
-    
     preprodef();
     int a = 5;
     printf("%d\n",SQUARE(a+1));

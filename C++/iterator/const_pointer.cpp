@@ -10,12 +10,12 @@
 using namespace std;
 int main()
 {
-     const double pi = 3.1415;
+    const double pi = 3.1415;
     double var = 111;
     const double & r2 = var;
     const int *p;
     cout << r2 << endl;
-    
+
     //double* ptr = &pi; 非法，会造成通过指针修改指向的值
     const double* cptr = &pi;
    // cptr = &var;

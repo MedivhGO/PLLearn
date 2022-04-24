@@ -14,7 +14,7 @@ int main()
     constexpr int limit = mf+1;
     //constexpr int sz = size();仅当size（）函数为constexpr函数时才是常量表达式
     cout << mf <<endl;
-    
+
     int null = 0;
     int *p = &null;
 }

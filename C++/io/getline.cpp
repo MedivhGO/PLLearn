@@ -12,8 +12,8 @@ using namespace std;
 int main()
 {
     string line;
-    while(getline(cin,line))
-          cout << line << endl; //读入换行符但并不存储
-          return 0;
-    
+    while(getline(cin,line)) {
+        cout << line << endl; // 读入换行符但并不存储
+    }
+    return 0;
 }

@@ -30,6 +30,4 @@ int main()
     const int &r3 = i;
     r1 =0 ;
    // r3 = 0;
-    
-    
 }

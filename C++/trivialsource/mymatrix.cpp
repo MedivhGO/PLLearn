@@ -12,19 +12,22 @@ using namespace std;
 template<class T> class mat
 {
 public:
-    mat()  //默认构造
+    mat()  // 默认构造
     {
         setDim(1, 1);
     }
-    mat(unsigned row, unsigned cow) //指定行列构造
+
+    mat(unsigned row, unsigned cow) // 指定行列构造
     {
         setDim(row, cow);
     }
-    mat(vector<T>&r)  //由vector作为行向量构造矩阵
+
+    mat(vector<T>&r)  // 由vector作为行向量构造矩阵
     {
         setDim(r.size(), 1);
         elem[0] = r;
     }
+
     ~mat()
     {
         for (unsigned i = 0; i < elem.size(); i++)
@@ -35,7 +38,7 @@ public:
         elem.clear();
         elem.shrink_to_fit();
     }
-    
+
     void setDim(unsigned row,unsigned cow)
     {
         elem.resize(row);
@@ -44,24 +47,28 @@ public:
             elem[i].resize(cow);
         }
     }
-    
+
     const vector<double>& operator[](unsigned row) const
     {
         return elem[row];
     }
+
     vector<double>& operator[](unsigned row)
     {
         return elem[row];
     }
-    unsigned getRow() const   //行数
+
+    unsigned getRow() const   // 行数
     {
         return elem.size();
     }
-    unsigned getCow() const  //列数
+
+    unsigned getCow() const  // 列数
     {
         return getRow() ? elem[0].size() : 0;
     }
-    mat<T> getRowMat(unsigned r)  const //取第r行向量
+
+    mat<T> getRowMat(unsigned r)  const // 取第r行向量
     {
         mat<T> R(1, getCow());
         for (unsigned i = 0; i < getCow(); i++)
@@ -70,7 +77,8 @@ public:
         }
         return R;
     }
-    mat<T> getCowMat(unsigned c)  const //取第c列向量
+
+    mat<T> getCowMat(unsigned c)  const // 取第c列向量
     {
         mat<T> C(getRow(), 1);
         for (unsigned i = 0; i < getRow(); i++)
@@ -79,6 +87,7 @@ public:
         }
         return C;
     }
+
     void   showMatrix() {
         for (unsigned i = 0; i < elem.size(); i++)
         {
@@ -90,8 +99,8 @@ public:
         }
 
     }
-    
-    friend mat<T>  operator+(const mat<T>&A, const mat< T>&B)     //矩阵加法
+
+    friend mat<T>  operator+(const mat<T>&A, const mat< T>&B)     // 矩阵加法
     {
         mat<T> C(A.getRow(),A.getCow());
         
@@ -104,7 +113,8 @@ public:
         }
         return C;
     }
-    friend mat<T>  operator-(const mat<T>&A, const mat< T>&B)     //矩阵减法
+
+    friend mat<T>  operator-(const mat<T>&A, const mat< T>&B)     // 矩阵减法
     {
         mat<T> C(A.getRow(), A.getCow());
         
@@ -117,7 +127,8 @@ public:
         }
         return C;
     }
-    friend mat<T>  operator*(const mat<T>&A, const mat< T>&B)   //矩阵乘法
+
+    friend mat<T>  operator*(const mat<T>&A, const mat< T>&B)   // 矩阵乘法
     {
         unsigned i, j, k;
         mat<T> C(A.getRow(), B.getCow());
@@ -133,7 +144,8 @@ public:
         }
         return C;
     }
-    friend mat<T>  operator*(const T& e,const mat<T>&A)     //矩阵数乘
+
+    friend mat<T>  operator*(const T& e,const mat<T>&A)     // 矩阵数乘
     {
         mat<T> C(A.getRow(), A.getCow());
         
@@ -146,7 +158,8 @@ public:
         }
         return C;
     }
-    friend mat<T>  operator/(const mat<T>&A,const T& e)     //矩阵除以一个数
+
+    friend mat<T>  operator/(const mat<T>&A,const T& e)     // 矩阵除以一个数
     {
         mat<T> C(A.getRow(), A.getCow());
         
@@ -159,12 +172,12 @@ public:
         }
         return C;
     }
-    
-    bool isSquare() const  //判断是否为方阵
+
+    bool isSquare() const  // 判断是否为方阵
     {
         return getRow() == getCow();
     }
-    
+
 private:
     vector<vector <T>> elem;
 };
@@ -172,9 +185,9 @@ private:
 
 int main(int argc, const char * argv[]) {
     mat<double> A(4,4),B(4,4);
-    
+
     cout << "为矩阵A赋值" << endl;
-    
+
     for ( unsigned i = 0; i < A.getRow(); i++)
     {
         for ( unsigned j = 0; j<A.getCow() ;j++) {
@@ -184,9 +197,9 @@ int main(int argc, const char * argv[]) {
         cout << endl;
     }
     cout << endl;
-    
+
     cout << "为矩阵B赋值" << endl;
-    
+
     for (unsigned i = 0; i < B.getRow();i++)
     {
         for (unsigned j = 0; j < B.getCow();j++)
@@ -196,11 +209,11 @@ int main(int argc, const char * argv[]) {
         }
         cout << endl;
     }
-    
+
     cout << endl;
-    
+
     mat<double> C(4,4);
     C = A*B;
     C.showMatrix();
-    
+
 }

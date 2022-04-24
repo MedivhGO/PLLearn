@@ -19,14 +19,12 @@ int main()
     //static_cast 也可以找回存在于void*的指针
     void *p = &d;
     double *dp = static_cast<double*>(p);
-    
+
     //const_cast 只能改变运算对象的底层const
     const char* pc;
     char* t = const_cast<char*>(pc);//指针改变指向的对象，由原来的const类型变为普通类型。
-   
+
     //reinterpret_cast 通常为运算对象的位模式提供较低层次上的重新解释
     int *ip;
     char* pc = reinterpret_cast<char*>(ip);//编译器不会报错，但这么做十分危险
-    
-    
 }

@@ -14,8 +14,7 @@ String::String(const char* str) {//空实参初始化的时候需要将s_data指
     if (str==nullptr) {
         s_data = new char[1];
         *s_data = '\0';
-    }
-    else {
+    } else {
         int len = strlen(str);
         s_data = new char[len+1];
         strcpy(s_data,str);
@@ -34,7 +33,7 @@ String& String::operator=(const String& other) {
     strcpy(s_data, other.s_data);//赋值
     return *this;//返回
 }
-String::~String(){
+String::~String() {
     delete[] s_data;
 }
 

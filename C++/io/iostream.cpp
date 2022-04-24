@@ -13,8 +13,7 @@ int main()
     cin.tie(&cout);
     //old_tie 得到指向当前关联到cin的流（如果有的话）
     ostream* old_tie = cin.tie(nullptr);
-    
+
     cin.tie(&cerr);
     cin.tie(old_tie);
-    
 }

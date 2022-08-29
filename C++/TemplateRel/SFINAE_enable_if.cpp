@@ -13,10 +13,10 @@ struct my_enable_if<true, T> {
 
 int main()
 {
-    // is_integral<int>::value ÊÇÒ»¸ö²¼¶ûÖµ
+    // is_integral<int>::value æ˜¯ä¸€ä¸ªå¸ƒå°”å€¼
     cout << std::is_integral<int>::value << endl;
-    // µ±enable_if µÚÒ»¸öÄ£°å²ÎÊıÎªtrueÊ±£¬type²ÅÓĞÒâÒå
-    // ¼°ÎªµÚ¶ş¸öÄ£°å²ÎÊı
+    // å½“enable_if ç¬¬ä¸€ä¸ªæ¨¡æ¿å‚æ•°ä¸ºtrueæ—¶ï¼Œtypeæ‰æœ‰æ„ä¹‰
+    // åŠä¸ºç¬¬äºŒä¸ªæ¨¡æ¿å‚æ•°
     typename std::enable_if<true, int>::type l = 10;
     // typename std::enable_if<false, int>::type l = 10;
     cout << l << endl;
@@ -24,7 +24,7 @@ int main()
     typename my_enable_if<true, double>::type d = 3.14;
     // typename my_enable_if<false, double>::type dd = 3.14;
     
-    // È«ÌØ»¯°æ±¾, ²»´æÔÚ using type = T ÕâÑùµÄÀàĞÍÉùÃ÷
+    // å…¨ç‰¹åŒ–ç‰ˆæœ¬, ä¸å­˜åœ¨ using type = T è¿™æ ·çš„ç±»å‹å£°æ˜
     my_enable_if<false, float> t;
     
     cout << d << endl;

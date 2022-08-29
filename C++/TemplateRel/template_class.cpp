@@ -3,7 +3,6 @@
 #include <string>
 using namespace std;
 
-
 template <typename > class BlobPtr; //使得BlobPtr在Blob中可见
 template <typename > class Blob;
 template <typename T>
@@ -94,15 +93,10 @@ BlobPtr<T> BlobPtr<T>::operator++(int)
 }
 
 template <typename > class BlobPtr;
-template <typename > class Blob; //运算符==中的参数所需要
-
-
-
+template <typename > class Blob; // 运算符==中的参数所需要
 template <typename T> class Blob {
 
 };
-
-
 
 int main(int argc, char* argv[]) {
 

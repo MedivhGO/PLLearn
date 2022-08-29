@@ -6,22 +6,22 @@ class Buffer
 public:
     void append(char c, size_t n = 1); // 1
     void append(const char* s, size_t n); // 2
-    
+
     template<typename Iter>
     void append(Iter bp, Iter ep); // 3
-    
-    // ÎªÁË·ÀÖ¹Æ¥ÅäÕâ¸öÄ£°åº¯Êı
-    // Í¨¹ıÈÃµÚ¶ş¸öÄ£°å²ÎÊıÍÆµ¼Ê§°ÜÀ´×èÖ¹Æ¥Åä
-//    template<typename Iter, typename T = void>
-//    void append(Iter bp, Iter ep); // 4
-    
+
+    // ä¸ºäº†é˜²æ­¢åŒ¹é…è¿™ä¸ªæ¨¡æ¿å‡½æ•°
+    // é€šè¿‡è®©ç¬¬äºŒä¸ªæ¨¡æ¿å‚æ•°æ¨å¯¼å¤±è´¥æ¥é˜»æ­¢åŒ¹é…
+    // template<typename Iter, typename T = void>
+    // void append(Iter bp, Iter ep); // 4
+
     template<
         typename Iter, 
         typename = typename std::enable_if<!std::is_integral<Iter>::value>::type
     >
     void append(Iter bp, Iter ep); // 5
     
-    // Ò²¿ÉÒÔÕâÑùĞ´
+    // ä¹Ÿå¯ä»¥è¿™æ ·å†™
     template<typename Iter,
         typename std::enable_if<!std::is_integral<Iter>::value, int>::type = 0
     >
@@ -34,8 +34,8 @@ int main()
     if (ch == EOF) {
         return 1;
     }
-    
+
     Buffer buff;
-    buff.append(ch, 10); // int, int »áµ÷ÓÃ 3
-    
+    buff.append(ch, 10); // int, int ä¼šè°ƒç”¨ 3
+
 }

@@ -1,9 +1,8 @@
 #include <iostream>
 using namespace std;
 
-
 enum TESTTYPE {
-    A1,A2,A3,A4
+    A1, A2, A3 ,A4
 };
 
 template <TESTTYPE T>
@@ -33,5 +32,4 @@ int main()
     cout << typeid(a).name() << endl;
     cout << typeid(b).name() << endl;
     cout << typeid(c).name() << endl;
-    
 }

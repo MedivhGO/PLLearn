@@ -15,12 +15,14 @@ void print(std::pair<Kt,Vt> kv)
     print("=");
     print(kv.second);
 }
+
 template <typename T>
 void print(T t)
 {
     std::cout << t;
 }
-template<typename T,typename AllocT,template<typename,typename...> typename SequenceT>
+
+template<typename T, typename AllocT, template<typename,typename...> typename SequenceT>
 void print(SequenceT<T, AllocT> seq)
 {
     print("{");
@@ -33,10 +35,11 @@ void print(SequenceT<T, AllocT> seq)
 
 int main()
 {
-    std::vector<std::vector<int> > vec{
+    std::vector<std::vector<int>> vec{
         {1,3},
-         {-2,2}};
-        
+        {-2,2}
+    };
+
     std::vector<int> ivec{1,2,3};
     print(ivec);
     return 0;

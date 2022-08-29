@@ -4,16 +4,17 @@
 //
 //  Created by 李敬琪 on 16/9/27.
 //  Copyright © 2016年 ls. All rights reserved.
+//  Modify Time 2022年8月29日11:14:58
 //
 
 #include <iostream>
 using namespace std;
 // cast-name<type>(expression)
-//cast-name static_cast,dynamic_cast,const_cast,reinterpret_cast
+// cast-name static_cast, dynamic_cast, const_cast, reinterpret_cast
 int main()
 {
     //static_cast 把较大的数据类型，转换为较小的数据类型，不在乎潜在的精度损失。
-    int i=2,j=3;
+    int i=2, j=3;
     int d;
     double slope = static_cast<double>(j)/i;
     //static_cast 也可以找回存在于void*的指针

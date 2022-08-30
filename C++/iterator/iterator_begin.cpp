@@ -11,7 +11,9 @@
 #include <list>
 #include <string>
 #include <vector>
+
 using namespace std;
+
 int main()
 {
     list<string> a;

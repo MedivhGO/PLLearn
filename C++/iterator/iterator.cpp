@@ -19,14 +19,14 @@ using namespace std;
 int main()
 {
     list<int> lst1;
-    
-    list<int>::iterator iter1 = lst1.begin(),iter2 = lst1.end();
-    
-    while(iter1 !=  iter2) {
+    list<int>::iterator iter1 = lst1.begin(), iter2 = lst1.end();
+
+    while(iter1 != iter2) {
         cout << "aaa"<<endl;
     }
+
     vector<int> vec1;
-    vector<int>::iterator viter1 = vec1.begin(),viter2 = vec1.end();
+    vector<int>::iterator viter1 = vec1.begin(), viter2 = vec1.end();
     while(viter1 < viter2) {
         cout << "aaaaaa" << endl;
     }

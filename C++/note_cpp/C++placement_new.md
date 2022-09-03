@@ -4,7 +4,7 @@
 ## new operator
 
 1. 调用operator new 分配内存；
-2. 嗲用构造函数生成类对象；
+2. 调用构造函数生成类对象；
 3. 返回相应的指针；
 
 ## operator new
@@ -35,7 +35,7 @@ char buf*  = new char[N*sizeof(MyClass) + sizeof(int)];
 
 MyClass *p = new (buf) MyClass //placement new
 p->~MyClass() //析构对象，但是不释放空间。
-    
+
 delete p[] //堆上释放空间
 ```
 

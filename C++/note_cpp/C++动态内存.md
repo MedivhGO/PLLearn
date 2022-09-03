@@ -23,7 +23,6 @@ new 和 delete 运算符
 shared_ptr<int> ip; //默认的智能指针中保存着一个空指针。
 shared_ptr<string> sp;
 shared_ptr<list<int>> ilp; //指向链表的智能指针
-
 ```
 ### 智能指针上的操作
 

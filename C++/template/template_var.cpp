@@ -1,7 +1,5 @@
 template<typename... Args>
-void fun<Args... args> {
-    
-}
+void fun(Args... args) {}
 
 int main() {
     func(1, 2, 3);

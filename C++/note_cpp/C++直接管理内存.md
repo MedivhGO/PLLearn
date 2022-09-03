@@ -90,35 +90,35 @@ int main()
   
 }
 
-
 ```
-
 改用shared_ptr
-
 ```
 // Example program
 #include <iostream>
 #include <string>
 #include <vector>
 #include <memory>
+
 using namespace std;
+
 void read1(shared_ptr<vector<int>> p) {
     int c;
     cin>>c;
     p->push_back(c);//
-    return ;
+    return;
 }
+
 void output1(shared_ptr<vector<int>> p) {
     cout << p->back();
-    return ;
+    return;
 }
+
 int main()
 {
   shared_ptr<vector<int>> p = make_shared<vector<int>>();
   read1(p);
   output1(p);
   return 0;
-  
 }
 
 ```

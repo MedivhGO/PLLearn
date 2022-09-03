@@ -114,7 +114,6 @@ class A {
     int b = {1};
     int c = 2;
     int d;
-    int e(3);//错误
+    int e(3); // 错误
 }
-
 ````

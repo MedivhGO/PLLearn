@@ -17,7 +17,7 @@
     ++it;
 ```
 
-##iostream迭代器
+## iostream迭代器
 
 1. istream_iterator 读取输入流。
 2. ostream_iterator 向一个输出流写数据。
@@ -37,7 +37,7 @@
     istream_iterator<int> in_iter(cin),eof;
     vector<int> vec(in_iter,eof); //使用以迭代器为参数的vector的构造函数。
 ```
-###使用算法操作流迭代器
+### 使用算法操作流迭代器
 
 ```c++
     istream_iterator<int> in(cin),eof;
@@ -56,11 +56,9 @@
         *out_iter++ = e;
     }
     cout << endl;
-    
-    使用copy算法，快速打印到标准输出
-    
+    // 使用copy算法，快速打印到标准输出
     copy(ivec.begin(),ivec.end(),out_iter); //调用一个三个参数的copy算法，前两个迭代器是源迭代器，第三个迭代器是目的迭代器。
 ```
-##使用流迭代器处理类类型
+## 使用流迭代器处理类类型
 我们可以为任何定义了输入符号(>>)的类型创建istream_iterator对象，类似的oistream_iterator。
 

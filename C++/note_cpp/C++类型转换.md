@@ -8,8 +8,8 @@
 
 ```c++
  cast-name<type>(expression)
- //其中type是转换的目标类型，expression是要转换的值
- //castname是上表所列的4个转换类型名中的一种
+ // 其中type是转换的目标类型，expression是要转换的值
+ // castname是上表所列的4个转换类型名中的一种
 ```
 #### static_cast
 任何具有明确定义的类型转换，只要不包含底层const，都可以使用static_cast。
@@ -17,8 +17,7 @@
 ```c++
  int i,j;
  double slope = i/j;
- double slope = static_cast<double>(j)/i;//强制转换以便执行浮点除法。
- 
+ double slope = static_cast<double>(j)/i; // 强制转换以便执行浮点除法。
 ```
 当一个较大的算术类型转换成一个较小的算术类型，如果没有使用static_cast 就会显示警告，使用static_cast警告就消失了，因为编译器已经默认接受可能出现的精度损失。
 

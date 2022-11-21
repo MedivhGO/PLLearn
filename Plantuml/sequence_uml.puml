@@ -1,0 +1,17 @@
+@startuml sequence
+skinparam sequenceMessageAlign right
+
+user -> ParserContext
+activate user
+
+ParserContext -> meta_service
+
+meta_service -> DropPartitions
+
+DropPartitions -> meta_service
+
+meta_service -> ParserContext
+
+ParserContext -> user
+deactivate user
+@enduml

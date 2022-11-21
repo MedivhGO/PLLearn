@@ -1,0 +1,11 @@
+@startuml state
+
+[*] --> FirstState
+FirstState --> [*]
+FirstState : this is a string
+FirstState : this is another string
+
+FirstState -> SecondState
+SecondState --> [*]
+
+@enduml

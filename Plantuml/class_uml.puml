@@ -1,0 +1,82 @@
+@startuml SmartPtrImplement
+
+abstract MyRefCountBase {
+    - long : m_user
+    - long : m_weak
+    # MyRefCountBase()
+    + void Incref()
+    + void Incwref()
+    + bool Decref()
+    + bool Decwref()
+    + long Use_Count()
+    - {abstract} void Destory()
+    - {abstract} void Delete_This()
+}
+
+class MyRefCount {
+    - T : *m_ptr
+    - void Destory()
+    - void Delete_This()
+    + MyRefCount(T* ptr) : 
+      MyRefCountBase(),
+      m_ptr(ptr)
+}
+
+MyRefCountBase <|-- MyRefCount
+
+
+class MyBaseSmartPtr {
+    # long Use_Count() const
+    # T* Get() const
+    # MyBaseSmartPtr()
+    # ~MyBaseSmartPtr()
+    # Raw_Construct(T* ptr)
+    # Move_Construct(MyBaseSmartPtr<T> &&rhs)
+    # Copy_Construct_From(const MySharedPtr<T>& rhs)
+    # Construct_From_Weak(const MyWeakPtr<T>& rhs)
+    # Weakly_Construct_From(const MyBaseSmartPtr<T>& other)
+    # Swap(MyBaseSmartPtr<T>& right)
+    # Incref() const
+    # Decref()
+    # Incwref()
+    # Decwref()
+    - T* : m_ptr
+    - MyRefCountBase* : m_refcount
+}
+
+class MySharedPtr {
+    + MySharedPtr()
+    + MySharedPtr(T*)
+    + MySharedPtr(const MyWeakPtr<T> &wp);
+    + Cotr()
+    + Operator=()
+    + swap()
+    + use_count()
+    + T* get()
+    + T& operator*()
+    + T* operator->()
+    + bool unique()
+    + void reset()
+    + void reset(T*)
+}
+
+class MyWeakPtr {
+    + MyWeakPtr();
+    + MyWeakPtr(const MyWeakPtr<T> &x);
+    + MyWeakPtr(const MySharedPtr<T> &x) noexcept;
+    + MyWeakPtr &operator=(const MyWeakPtr<T> &x) noexcept;
+    + MyWeakPtr &operator=(const MySharedPtr<T> &x) noexcept;
+    + ~MyWeakPtr();
+    + bool expired() const
+    + void swap(MyWeakPtr<T> &x)
+    + MySharedPtr<T> lock()
+    + void reset()
+    + long use_count()
+}
+
+MyRefCount o--> MyBaseSmartPtr
+
+MyBaseSmartPtr <|-- MySharedPtr
+MyBaseSmartPtr <|-- MyWeakPtr
+
+@enduml

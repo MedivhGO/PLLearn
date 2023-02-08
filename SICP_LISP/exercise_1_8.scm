@@ -31,6 +31,6 @@
 (cube 10)              ; 1000
 (improve 10 1000)      ; 10
 (abs -110)             ; 110
-(good-enough? 1011 1000); #f 
+(good-enough? 1011 1000); #f
 (cuberoot-itr 101 1000); pass
 (cuberoot 1000)        ; pass
